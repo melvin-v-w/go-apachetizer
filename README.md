@@ -14,12 +14,12 @@ package main
 
 import(
 	"github.com/dbzmelvin/go-apachetizer"
-    "fmt"
+	"fmt"
 	)
 
 func main(){
 	list, _ :=  go_apachetizer.VHostConfDetector("./etc/apache2/sites-available")
-    fmt.Printf("This is your list: %s", list)
+	fmt.Printf("This is your list: %s", list)
 }
 ```
 
@@ -29,8 +29,8 @@ This function will parse the given config file, you have to pass an io.Reader
 package main
 
 import(
-	"github.com/dbzmelvin/go-apachetizer" 
-    "fmt"
+	"github.com/dbzmelvin/go-apachetizer"
+	"fmt"
 	"os"
 	"encoding/json"
 	)
