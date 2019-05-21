@@ -12,10 +12,13 @@ This function will detect all configs save it into a <br>[]string array and retu
 ```go
 package main
 
-import("github.com/dbzmelvin/go-apachetizer")
+import(
+	"github.com/dbzmelvin/go-apachetizer"
+    "fmt"
+	)
 
 func main(){
-	list, _ :=  VHostConfDetector("./etc/apache2/sites-available")
+	list, _ :=  go_apachetizer.VHostConfDetector("./etc/apache2/sites-available")
     fmt.Printf("This is your list: %s", list)
 }
 ```
@@ -25,11 +28,16 @@ This function will parse the given config file, you have to pass an io.Reader
 ```go
 package main
 
-import("github.com/dbzmelvin/go-apachetizer")
+import(
+	"github.com/dbzmelvin/go-apachetizer" 
+    "fmt"
+	"os"
+	"encoding/json"
+	)
 
 func main(){
     Reader, _ := os.Open("./etc/apache2/testconfig-le-ssl.conf") //io.Reader
-    config, _ := VHostConfParser(Reader) //Parse the config
+    config, _ := go_apachetizer.VHostConfParser(Reader) //Parse the config
     jsonEncoded, _ := json.Marshal(config) //Encode the []string array to json []byte array
     fmt.Println(string(jsonEncoded)) //Print the []byte array as string
 }
