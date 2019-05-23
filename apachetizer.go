@@ -1,4 +1,4 @@
-package go_apachetizer
+package apachetizer
 
 import (
 	"bufio"

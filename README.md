@@ -18,7 +18,7 @@ import(
 	)
 
 func main(){
-	list, _ :=  go_apachetizer.VHostConfDetector("./etc/apache2/sites-available")
+	list, _ :=  apachetizer.VHostConfDetector("./etc/apache2/sites-available")
 	fmt.Printf("This is your list: %s", list)
 }
 ```
@@ -37,7 +37,7 @@ import(
 
 func main(){
     Reader, _ := os.Open("./etc/apache2/testconfig-le-ssl.conf") //io.Reader
-    config, _ := go_apachetizer.VHostConfParser(Reader) //Parse the config
+    config, _ := apachetizer.VHostConfParser(Reader) //Parse the config
     jsonEncoded, _ := json.Marshal(config) //Encode the []string array to json []byte array
     fmt.Println(string(jsonEncoded)) //Print the []byte array as string
 }
