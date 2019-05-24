@@ -1,6 +1,8 @@
 # go-apachetizer
 Simple and lightweight Apache2 Config Detector and Parser
 
+<a href="https://goreportcard.com/report/github.com/dbzmelvin/go-apachetizer"><img src="https://goreportcard.com/badge/github.com/dbzmelvin/go-apachetizer"></a>
+
 ## Used external Dependencies
 * github.com/msoap/byLine
 
