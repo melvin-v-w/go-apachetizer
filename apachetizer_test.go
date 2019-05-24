@@ -16,7 +16,7 @@ func TestVHostConfDetector(t *testing.T) {
 	if reflect.TypeOf(got).Kind() != reflect.Slice{
 		panic(got)
 	}else{
-		fmt.Println("VHostConfDetector successfuly returns a slice (string array)")
+		fmt.Println("VHostConfDetector successfully returns a slice (string array)")
 	}
 
 }
