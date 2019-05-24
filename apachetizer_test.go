@@ -2,21 +2,21 @@ package apachetizer
 
 import (
 	"encoding/json"
+	"log"
 	"reflect"
 	"testing"
-	"fmt"
 	"os"
 )
 
 func TestVHostConfDetector(t *testing.T) {
 	got, err := VHostConfDetector("./etc/apache2/sites-available")
 	if err != nil{
-		fmt.Println(err)
+		log.Fatal(err)
 	}
 	if reflect.TypeOf(got).Kind() != reflect.Slice{
 		panic(got)
 	}else{
-		fmt.Println("VHostConfDetector successfully returns a slice (string array)")
+		log.Println("VHostConfDetector successfully returns a slice (string array)")
 	}
 
 }
@@ -29,5 +29,5 @@ func TestVHostConfParser(t *testing.T) {
 	config, _ := VHostConfParser(Reader)
 	jsonEncoded, _ := json.Marshal(config)
 
-	fmt.Println(string(jsonEncoded))
+	log.Println(string(jsonEncoded))
 }
