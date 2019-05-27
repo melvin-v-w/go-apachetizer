@@ -3,6 +3,7 @@ package apachetizer
 import (
 	"bufio"
 	"io"
+	"log"
 	"os"
 	"strings"
 )
@@ -10,11 +11,11 @@ import (
 func VHostConfDetector(cfgPath string) (files []string, err error) {
 	f, err := os.Open(cfgPath)
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 	fileInfo, err := f.Readdir(-1)
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 	for _, file := range fileInfo {
 		files = append(files, cfgPath+file.Name())
