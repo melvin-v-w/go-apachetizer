@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-//Function will detect files in a given path
+// VHostConfDetector Function will detect files in a given path
 //put all detected paths into one string array
 //and return it.
 func VHostConfDetector(cfgPath string) (files []string, err error) {
@@ -26,12 +26,12 @@ func VHostConfDetector(cfgPath string) (files []string, err error) {
 	return files, err
 }
 
-//Type VirtualHostConfig is the map that
+// VirtualHostConfig Type is the map that
 //will be filled with information from the
 //parser.
 type VirtualHostConfig map[string]string
 
-//This is the parser function, you have to pass
+// VHostConfParser This is the parser function, you have to pass
 //an io.Reader to to it, where it will read a
 //apache virtualhost config and parse it to a
 //map that is fully compatible with json.Marshal.
